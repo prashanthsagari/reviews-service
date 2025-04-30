@@ -1,0 +1,43 @@
+Run below commands using Powershell if  you are using Windows OS
+# start minikube in docker 
+minikube start --driver=docker
+
+# run below command Connect to Minikube Docker (`& minikube docker-env  Invoke-Expression`)
+# Otherwise the image will be in your local PC, not inside Minikube’s Docker engine.
+& minikube docker-env | Invoke-Expression
+
+# (Name: minikube)
+docker info  
+
+# run below command 
+mvn clean install  
+
+
+# Build image 
+docker build -t reviews-service:latest .
+
+
+# verify image is creation
+docker images
+
+# deployments 
+
+kubectl apply -f reviews-deployment.yaml
+kubectl apply -f reviews-service.yaml
+
+kubectl get pods
+
+
+minikube service reviews-service --url
+       or
+kubectl port-forward svc/reviews-service 9001:9001
+
+
+
+
+# Delete old deployments 
+kubectl delete deployment reviews-service
+kubectl delete service reviews-service
+
+# Stop minikube
+minikube stop

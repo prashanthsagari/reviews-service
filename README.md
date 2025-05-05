@@ -20,8 +20,8 @@ Run the following command to start Minikube with Docker as the driver: <br />
 
 Run below commands using Powershell if  you are using Windows OS <br />
 # start minikube in docker
-Otherwise the image will be in your local PC, not inside Minikube’s Docker engine.
- 
+Otherwise the image will be in your local PC, not inside Minikube’s Docker engine.  <br />
+ minikube start --driver=docker
 ### 2. Connect to Minikube's Docker Engine
 In PowerShell, run the following to switch to Minikube's Docker environment:
 

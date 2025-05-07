@@ -14,8 +14,10 @@ spec:
     spec:
       containers:
         - name: reviews-service
-          image: reviews-service:latest
+          image: reviews-service:1.0
           imagePullPolicy: Never
+          #image: sagariprashanth/favorites-service:1.0
+          #imagePullPolicy: Always
           ports:
             - containerPort: 9001
           env:
@@ -24,4 +26,4 @@ spec:
             - name: SPRING_DATASOURCE_USERNAME
               value: root
             - name: SPRING_DATASOURCE_PASSWORD
-              value: sagari
+              value: "1234"
